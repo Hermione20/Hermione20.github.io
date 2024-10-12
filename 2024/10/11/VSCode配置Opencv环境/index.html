@@ -51,12 +51,14 @@
 <meta property="og:image" content="https://hermione20.github.io/2024/10/11/VSCode%E9%85%8D%E7%BD%AEOpencv%E7%8E%AF%E5%A2%83/%E4%BF%AE%E6%94%B9settingjson.png">
 <meta property="og:image" content="https://hermione20.github.io/2024/10/11/VSCode%E9%85%8D%E7%BD%AEOpencv%E7%8E%AF%E5%A2%83/%E6%98%BE%E7%A4%BA%E5%9B%BE%E7%89%87.png">
 <meta property="article:published_time" content="2024-10-11T10:03:52.110Z">
-<meta property="article:modified_time" content="2024-10-12T04:05:16.918Z">
+<meta property="article:modified_time" content="2024-10-12T07:09:04.503Z">
 <meta property="article:author" content="TC">
 <meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://hermione20.github.io/2024/10/11/VSCode%E9%85%8D%E7%BD%AEOpencv%E7%8E%AF%E5%A2%83/mingw64%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E8%AE%BE%E7%BD%AE.png">
   
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
   
   
   <title>VSCode配置Opencv环境 - TC&#39;s Blog</title>
@@ -358,7 +360,7 @@
               <div class="markdown-body">
                 
                 
-    <div id="aplayer-rXdejaig" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-VLwsIZOM" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="1985510682" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"
     ></div>
 <h3 id="1-安装VS-Code"><a href="#1-安装VS-Code" class="headerlink" title="1.安装VS Code"></a>1.安装VS Code</h3><h3 id="2-安装MinGW"><a href="#2-安装MinGW" class="headerlink" title="2.安装MinGW"></a>2.安装MinGW</h3><p>解压[[MinGW-w64]]压缩包，将该文件夹的bin路径添加到环境变量的系统变量中<br><img src="/2024/10/11/VSCode%E9%85%8D%E7%BD%AEOpencv%E7%8E%AF%E5%A2%83/mingw64%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E8%AE%BE%E7%BD%AE.png" srcset="/img/loading.gif" lazyload><br>Win+R，cmd调出控制台，检查MinGW-w64是否安装成功，若成功则如下图所示：</p>
@@ -479,8 +481,10 @@
 <p>}<br>主要修改cpp项<br>-I<br>-L<br><img src="/2024/10/11/VSCode%E9%85%8D%E7%BD%AEOpencv%E7%8E%AF%E5%A2%83/%E9%93%BE%E6%8E%A5%E5%99%A81.png" srcset="/img/loading.gif" lazyload><br>-i<br><img src="/2024/10/11/VSCode%E9%85%8D%E7%BD%AEOpencv%E7%8E%AF%E5%A2%83/%E9%93%BE%E6%8E%A5%E5%99%A82.png" srcset="/img/loading.gif" lazyload><br><img src="/2024/10/11/VSCode%E9%85%8D%E7%BD%AEOpencv%E7%8E%AF%E5%A2%83/%E9%93%BE%E6%8E%A5%E5%99%A83.png" srcset="/img/loading.gif" lazyload><br><img src="/2024/10/11/VSCode%E9%85%8D%E7%BD%AEOpencv%E7%8E%AF%E5%A2%83/%E4%BF%AE%E6%94%B9settingjson.png" srcset="/img/loading.gif" lazyload><br>最后完成修改。</p>
 <p>上述过程配合一个新建的例程测试，这里提供如下</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;opencv2\highgui\highgui.hpp&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;opencv2\opencv.hpp&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> cv;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    string path = <span class="hljs-string">&quot;C:/Users/DELL/Desktop/20240920/C++opencv/img1.jpg&quot;</span>;<br>    cv::Mat img = <span class="hljs-built_in">imread</span>(path);<br>    <span class="hljs-built_in">imshow</span>(<span class="hljs-string">&quot;img&quot;</span>,img);<br>    <span class="hljs-built_in">waitKey</span>(<span class="hljs-number">0</span>);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h3 id="8-运行测试"><a href="#8-运行测试" class="headerlink" title="8.运行测试"></a>8.运行测试</h3><p>运行结果如下，测试成功<br><img src="/2024/10/11/VSCode%E9%85%8D%E7%BD%AEOpencv%E7%8E%AF%E5%A2%83/%E6%98%BE%E7%A4%BA%E5%9B%BE%E7%89%87.png" srcset="/img/loading.gif" lazyload><br><span id="busuanzi_container_page_pv"><br>…已获取<span id="busuanzi_value_page_pv"></span>份浏览之力…<br></span></p>
-
+<h3 id="8-运行测试"><a href="#8-运行测试" class="headerlink" title="8.运行测试"></a>8.运行测试</h3><p>运行结果如下，测试成功<br><img src="/2024/10/11/VSCode%E9%85%8D%E7%BD%AEOpencv%E7%8E%AF%E5%A2%83/%E6%98%BE%E7%A4%BA%E5%9B%BE%E7%89%87.png" srcset="/img/loading.gif" lazyload></p>
+<span id="busuanzi_container_page_pv">  
+...已获取<span id="busuanzi_value_page_pv"></span>份浏览之力...
+</span>
                 
               </div>
             
@@ -677,18 +681,39 @@
     <div class="footer-inner">
   
     <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/duration.js"></script> </div> 
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/duration.js"></script> </div>
     </div>
   
   
+    <div class="statistics">
   
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-  </script>
-  <span id="busuanzi_container_site_pv">
-    本站总访问量<span id="busuanzi_value_site_pv"></span>次
-  </span>
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
 </div>
 
+  
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</div>
 
   </footer>
 
@@ -831,6 +856,8 @@
   <script>Fluid.plugins.imageCaption();</script>
 
   <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
 
 
