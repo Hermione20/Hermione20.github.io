@@ -19,43 +19,20 @@
   <meta name="author" content="TC">
   <meta name="keywords" content="blog">
   
-    <meta name="description" content="1.安装VS Code2.安装MinGW解压[[MinGW-w64]]压缩包，将该文件夹的bin路径添加到环境变量的系统变量中Win+R，cmd调出控制台，检查MinGW-w64是否安装成功，若成功则如下图所示：  3.安装CMake将[[CMake]]安装包解压，文件夹如图所示：将该文件夹下的bin文件路径添加到环境变量的系统变量中： Win+R，cmd调出控制台，检查CMake是否">
+    <meta name="description" content="很简单的啦！">
 <meta property="og:type" content="article">
 <meta property="og:title" content="VSCode配置Opencv环境">
 <meta property="og:url" content="https://hermione20.github.io/2024/10/11/VSCode%E9%85%8D%E7%BD%AEOpencv%E7%8E%AF%E5%A2%83/index.html">
 <meta property="og:site_name" content="TC&#39;s Blog">
-<meta property="og:description" content="1.安装VS Code2.安装MinGW解压[[MinGW-w64]]压缩包，将该文件夹的bin路径添加到环境变量的系统变量中Win+R，cmd调出控制台，检查MinGW-w64是否安装成功，若成功则如下图所示：  3.安装CMake将[[CMake]]安装包解压，文件夹如图所示：将该文件夹下的bin文件路径添加到环境变量的系统变量中： Win+R，cmd调出控制台，检查CMake是否">
+<meta property="og:description" content="很简单的啦！">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://hermione20.github.io/2024/10/11/VSCode%E9%85%8D%E7%BD%AEOpencv%E7%8E%AF%E5%A2%83/mingw64%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E8%AE%BE%E7%BD%AE.png">
-<meta property="og:image" content="https://hermione20.github.io/2024/10/11/VSCode%E9%85%8D%E7%BD%AEOpencv%E7%8E%AF%E5%A2%83/MinGW%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F.png">
-<meta property="og:image" content="https://hermione20.github.io/2024/10/11/VSCode%E9%85%8D%E7%BD%AEOpencv%E7%8E%AF%E5%A2%83/CMake%E6%96%87%E4%BB%B6%E5%A4%B9.png">
-<meta property="og:image" content="https://hermione20.github.io/2024/10/11/VSCode%E9%85%8D%E7%BD%AEOpencv%E7%8E%AF%E5%A2%83/CMake%E6%B7%BB%E5%8A%A0%E5%88%B0%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F.png">
-<meta property="og:image" content="https://hermione20.github.io/2024/10/11/VSCode%E9%85%8D%E7%BD%AEOpencv%E7%8E%AF%E5%A2%83/CMake%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F.png">
-<meta property="og:image" content="https://hermione20.github.io/2024/10/11/VSCode%E9%85%8D%E7%BD%AEOpencv%E7%8E%AF%E5%A2%83/%E6%88%90%E5%8A%9F%E7%9A%84txt.png">
-<meta property="og:image" content="https://hermione20.github.io/CMakle%20Generate.png">
-<meta property="og:image" content="https://hermione20.github.io/2024/10/11/VSCode%E9%85%8D%E7%BD%AEOpencv%E7%8E%AF%E5%A2%83/opencv%E6%BA%90%E6%96%87%E4%BB%B6%E7%BC%96%E8%AF%91%E4%B8%AD.png">
-<meta property="og:image" content="https://hermione20.github.io/2024/10/11/VSCode%E9%85%8D%E7%BD%AEOpencv%E7%8E%AF%E5%A2%83/opencv%E6%BA%90%E6%96%87%E4%BB%B6%E7%BC%96%E8%AF%91%E5%AE%8C%E6%88%90.png">
-<meta property="og:image" content="https://hermione20.github.io/2024/10/11/VSCode%E9%85%8D%E7%BD%AEOpencv%E7%8E%AF%E5%A2%83/MinGW%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F.png">
-<meta property="og:image" content="https://hermione20.github.io/2024/10/11/VSCode%E9%85%8D%E7%BD%AEOpencv%E7%8E%AF%E5%A2%83/launch%E9%85%8D%E7%BD%AE.png">
-<meta property="og:image" content="https://hermione20.github.io/2024/10/11/VSCode%E9%85%8D%E7%BD%AEOpencv%E7%8E%AF%E5%A2%83/C++GDB.png">
-<meta property="og:image" content="https://hermione20.github.io/2024/10/11/VSCode%E9%85%8D%E7%BD%AEOpencv%E7%8E%AF%E5%A2%83/launchjson.png">
-<meta property="og:image" content="https://hermione20.github.io/2024/10/11/VSCode%E9%85%8D%E7%BD%AEOpencv%E7%8E%AF%E5%A2%83/%E6%9B%B4%E6%94%B9launchjson.png">
-<meta property="og:image" content="https://hermione20.github.io/2024/10/11/VSCode%E9%85%8D%E7%BD%AEOpencv%E7%8E%AF%E5%A2%83/%E9%85%8D%E7%BD%AEccppproperties.png">
-<meta property="og:image" content="https://hermione20.github.io/2024/10/11/VSCode%E9%85%8D%E7%BD%AEOpencv%E7%8E%AF%E5%A2%83/Configuration.png">
-<meta property="og:image" content="https://hermione20.github.io/2024/10/11/VSCode%E9%85%8D%E7%BD%AEOpencv%E7%8E%AF%E5%A2%83/Configuration2.png">
-<meta property="og:image" content="https://hermione20.github.io/2024/10/11/VSCode%E9%85%8D%E7%BD%AEOpencv%E7%8E%AF%E5%A2%83/Configuration3.png">
-<meta property="og:image" content="https://hermione20.github.io/2024/10/11/VSCode%E9%85%8D%E7%BD%AEOpencv%E7%8E%AF%E5%A2%83/%E9%85%8D%E7%BD%AE%E5%AE%8C%E6%88%90%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90cppp.png">
-<meta property="og:image" content="https://hermione20.github.io/2024/10/11/VSCode%E9%85%8D%E7%BD%AEOpencv%E7%8E%AF%E5%A2%83/%E9%93%BE%E6%8E%A5%E5%99%A81.png">
-<meta property="og:image" content="https://hermione20.github.io/2024/10/11/VSCode%E9%85%8D%E7%BD%AEOpencv%E7%8E%AF%E5%A2%83/%E9%93%BE%E6%8E%A5%E5%99%A82.png">
-<meta property="og:image" content="https://hermione20.github.io/2024/10/11/VSCode%E9%85%8D%E7%BD%AEOpencv%E7%8E%AF%E5%A2%83/%E9%93%BE%E6%8E%A5%E5%99%A83.png">
-<meta property="og:image" content="https://hermione20.github.io/2024/10/11/VSCode%E9%85%8D%E7%BD%AEOpencv%E7%8E%AF%E5%A2%83/%E4%BF%AE%E6%94%B9settingjson.png">
-<meta property="og:image" content="https://hermione20.github.io/2024/10/11/VSCode%E9%85%8D%E7%BD%AEOpencv%E7%8E%AF%E5%A2%83/%E6%98%BE%E7%A4%BA%E5%9B%BE%E7%89%87.png">
+<meta property="og:image" content="https://hermione20.github.io/background/22.png">
 <meta property="article:published_time" content="2024-10-11T10:03:52.110Z">
-<meta property="article:modified_time" content="2024-10-12T13:02:23.728Z">
+<meta property="article:modified_time" content="2024-10-13T03:40:45.511Z">
 <meta property="article:author" content="TC">
 <meta property="article:tag" content="opencv">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://hermione20.github.io/2024/10/11/VSCode%E9%85%8D%E7%BD%AEOpencv%E7%8E%AF%E5%A2%83/mingw64%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E8%AE%BE%E7%BD%AE.png">
+<meta name="twitter:image" content="https://hermione20.github.io/background/22.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -306,7 +283,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/background/22.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -389,7 +366,7 @@
               <div class="markdown-body">
                 
                 
-    <div id="aplayer-kHufAGIR" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-hKTShGVq" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="1985510682" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"
     ></div>
 <h3 id="1-安装VS-Code"><a href="#1-安装VS-Code" class="headerlink" title="1.安装VS Code"></a>1.安装VS Code</h3><h3 id="2-安装MinGW"><a href="#2-安装MinGW" class="headerlink" title="2.安装MinGW"></a>2.安装MinGW</h3><p>解压[[MinGW-w64]]压缩包，将该文件夹的bin路径添加到环境变量的系统变量中<br><img src="/2024/10/11/VSCode%E9%85%8D%E7%BD%AEOpencv%E7%8E%AF%E5%A2%83/mingw64%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E8%AE%BE%E7%BD%AE.png" srcset="/img/loading.gif" lazyload><br>Win+R，cmd调出控制台，检查MinGW-w64是否安装成功，若成功则如下图所示：</p>
