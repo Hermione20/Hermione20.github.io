@@ -26,13 +26,13 @@
 <meta property="og:site_name" content="TC&#39;s Blog">
 <meta property="og:description" content=".">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://hermione20.github.io/2024/10/12/Blog%E7%BE%8E%E5%8C%96%E6%96%B9%E6%A1%88/%E8%BE%B9%E7%BC%98/Canny%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B.png">
+<meta property="og:image" content="https://hermione20.github.io/2024/10/14/%E7%AC%AC5%E8%AF%BE%20Canny%E8%BE%B9%E7%BC%98/Canny%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B.png">
 <meta property="article:published_time" content="2024-10-14T13:39:03.712Z">
 <meta property="article:modified_time" content="2024-10-14T14:36:50.233Z">
 <meta property="article:author" content="TC">
 <meta property="article:tag" content="opencv">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://hermione20.github.io/2024/10/12/Blog%E7%BE%8E%E5%8C%96%E6%96%B9%E6%A1%88/%E8%BE%B9%E7%BC%98/Canny%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B.png">
+<meta name="twitter:image" content="https://hermione20.github.io/2024/10/14/%E7%AC%AC5%E8%AF%BE%20Canny%E8%BE%B9%E7%BC%98/Canny%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -116,11 +116,11 @@
 <meting-js
     server="netease"
     type="playlist"
-    autoplay=false 
-    fixed=true 
+    autoplay=true 
+    fixed=true
     mini=true
     lrc-type=3
-    id="7729098320"> 
+    id="12731530928"> 
 </meting-js> 
 <meta name="generator" content="Hexo 7.3.0"></head>
 
@@ -368,7 +368,7 @@
                 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">cv::Canny</span><span class="hljs-params">(InputArray image, OutputArray edges, <span class="hljs-type">double</span> threshold1, <span class="hljs-type">double</span> threshold2, <span class="hljs-type">int</span> apertureSize = <span class="hljs-number">3</span>, <span class="hljs-type">bool</span> L2gradient = <span class="hljs-literal">false</span>)</span></span><br></code></pre></td></tr></table></figure>
 <p>使用 Canny 算法在图像中查找边缘。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;opencv2/imgcodecs.hpp&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;opencv2/highgui.hpp&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;opencv2/imgproc.hpp&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> cv;<br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    string path = <span class="hljs-string">&quot;../lesson1_pictureRead/img1.jpg&quot;</span>;<br>    Mat img = <span class="hljs-built_in">imread</span>(path);<br>    Mat imgBlur,imgCanny;<br>    <span class="hljs-built_in">GaussianBlur</span>(img, imgBlur, <span class="hljs-built_in">Size</span>(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>), <span class="hljs-number">3</span>, <span class="hljs-number">0</span>); <span class="hljs-comment">//高斯模糊</span><br>    <span class="hljs-built_in">Canny</span>(imgBlur, imgCanny, <span class="hljs-number">75</span>, <span class="hljs-number">125</span>); <span class="hljs-comment">//边缘检测</span><br>    <span class="hljs-built_in">imshow</span>(<span class="hljs-string">&quot;Image&quot;</span>, img);<br>    <span class="hljs-built_in">imshow</span>(<span class="hljs-string">&quot;ImageCanny&quot;</span>, imgCanny);<br>    <span class="hljs-built_in">waitKey</span>(<span class="hljs-number">0</span>);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p><img src="/2024/10/12/Blog%E7%BE%8E%E5%8C%96%E6%96%B9%E6%A1%88/%E8%BE%B9%E7%BC%98/Canny%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2024/10/14/%E7%AC%AC5%E8%AF%BE%20Canny%E8%BE%B9%E7%BC%98/Canny%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B.png" srcset="/img/loading.gif" lazyload></p>
 
                 
               </div>
@@ -846,9 +846,9 @@
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
-<!-- hexo injector body_end start --><script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><script src="/js/background-switcher.js"></script><script src="/js/backgroundize.js"></script>
+<!-- hexo injector body_end start --><script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><script src="/js/backgroundize.js"></script>
   <link defer rel="stylesheet" href="/css/backgroundize.css" />
-  <!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.3},"log":false});</script></body>
+  <script src="/js/background-switcher.js"></script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.3},"log":false});</script></body>
 </html>
 
 
